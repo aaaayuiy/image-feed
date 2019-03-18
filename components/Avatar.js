@@ -3,8 +3,23 @@ import PropTypes from 'prop-types';
 import React from 'react';
 
 export default function Avatar({ size, backgroundColor, initials }) { // ...
+  const style = {
+      width: size,
+      height: size,
+      borderRadius: size / 2,
+      backgroundColor,
+  }
+  return (
+  <View style={[styles.container, style]} />
+  )
 
 }
+
+const styles = StyleSheet.create({ container: {
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+});
 
 Avatar.propTypes = {
   initials: PropTypes.string.isRequired,
